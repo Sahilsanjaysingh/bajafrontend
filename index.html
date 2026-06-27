@@ -17,9 +17,11 @@ pre{background:white;padding:15px}
 <pre id="out"></pre>
 
 <script>
+const API_BASE_URL = "https://bajaj-p-backend.onrender.com";
+
 async function submitData(){
  const arr = JSON.parse(document.getElementById("data").value);
- const res = await fetch("http://localhost:3000/bfhl",{
+ const res = await fetch(`${API_BASE_URL}/bfhl`,{
    method:"POST",
    headers:{"Content-Type":"application/json"},
    body:JSON.stringify({data:arr})
